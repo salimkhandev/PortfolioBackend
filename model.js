@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 // Connection
-const connectionURI = 'mongodb+srv://salim:salim@myportfolio.3t3ddqi.mongodb.net/myPortfolio?retryWrites=true&w=majority&appName=MyPortfolio';
-mongoose.connect(connectionURI,{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{console.log("connected")}).catch(()=>{console.log("connection failed");})
+const connectionURI = 'mongodb+srv://salim:salim@formsubmition.gvbqiwh.mongodb.net/?retryWrites=true&w=majority&appName=formSubmition';
+mongoose.connect(connectionURI).then(()=>{console.log("connected")}).catch(()=>{console.log("connection failed");})
 
 
 
