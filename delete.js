@@ -4,6 +4,18 @@ const MyModel = require('./model'); // Assuming your model is exported in a file
 deleteRouter.use(cors())
 
 
+deleteRouter.delete('/all', (req, res) => {
+  MyModel.deleteMany({})
+    .then(result => {
+      console.log('All documents deleted:', result.deletedCount);
+      res.status(200).json({ message: 'All documents deleted', deletedCount: result.deletedCount });
+    })
+    .catch(err => {
+      console.error('Error deleting all documents:', err);
+      res.status(500).json({ message: 'Error deleting all documents', error: err });
+    });
+});
+
 deleteRouter.delete('/', (req, res) => {
     const { id } = req.query; // Extract parameters from the request URL
 
