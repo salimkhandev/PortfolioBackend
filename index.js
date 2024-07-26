@@ -4,7 +4,9 @@ const axios = require('axios');
 const app = express();
 const MyModel = require('./model');
 const adminPanel=require('./AdminPanel')
+const deleteRouter=require('./delete')
 app.use('/admin',adminPanel);
+app.use('/delete',deleteRouter);
 // use cros
 var cors = require('cors')
 const port = process.env.PORT ||3000;
